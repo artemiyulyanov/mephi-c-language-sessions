@@ -19,7 +19,7 @@ int main(void) {
         int number;
 
         printf("Введите число: ");
-        scanf("%d\n", &number);
+        scanf("%d", &number);
 
         printf("Перевернутое число: %d\n", reverseNumber(number));
     }
