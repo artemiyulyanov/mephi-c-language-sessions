@@ -1,17 +1,19 @@
 #include <stdio.h>
 #include <stdbool.h>
 
-int reverseNumber(int number) {
-    int res = 0;
-
+int sumOdd(int number) {
+    int arr[2] = {0, 0};
+    int index = 0;
+    
     while (number > 0) {
-        int reminder = number % 10;
-        res = (res * 10) + reminder;
-
+        arr[index % 2] += number % 10;
         number /= 10;
+
+        index++;
     }
 
-    return res;
+    if (index % 2) return arr[1];
+    return arr[0];
 }
 
 int main(void) {
@@ -26,7 +28,7 @@ int main(void) {
             return 0;
         }
 
-        printf("Перевернутое число: %d\n", reverseNumber(number));
+        printf("Результат: %d\n", sumOdd(number));
     }
 
     return 0;
