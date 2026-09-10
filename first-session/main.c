@@ -1,21 +1,6 @@
 #include <stdio.h>
 #include <stdbool.h>
 
-int sumOdd(int number) {
-    int arr[2] = {0, 0};
-    int index = 0;
-    
-    while (number > 0) {
-        arr[index % 2] += number % 10;
-        number /= 10;
-
-        index++;
-    }
-
-    if (index % 2) return arr[1];
-    return arr[0];
-}
-
 int main(void) {
     while (true) {
         int number;
@@ -28,7 +13,32 @@ int main(void) {
             return 0;
         }
 
-        printf("Результат: %d\n", sumOdd(number));
+        int sums[2] = {0, 0};
+        int counts[2] = {0, 0};
+
+        int index = 0;
+        
+        while (number > 0) {
+            sums[index % 2] += number % 10;
+            counts[index % 2]++;
+
+            number /= 10;
+
+            index++;
+        }
+
+        int res, count;
+
+        if (index % 2) {
+            res = sums[1];
+            count = counts[1];
+
+        } else {
+            res = sums[0];
+            count = counts[0];
+        }
+
+        printf("Результат: сумма: %d; кол-во: %d\n", res, count);
     }
 
     return 0;
