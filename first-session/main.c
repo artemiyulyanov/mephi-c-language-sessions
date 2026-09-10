@@ -18,8 +18,13 @@ int main(void) {
     while (true) {
         int number;
 
-        printf("Введите число: ");
+        printf("Введите число, введите 0 для выхода: ");
         scanf("%d", &number);
+
+        if (number == 0) {
+            printf("Спасибо за сеанс!");
+            return 0;
+        }
 
         printf("Перевернутое число: %d\n", reverseNumber(number));
     }
