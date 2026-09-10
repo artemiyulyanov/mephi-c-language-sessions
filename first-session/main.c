@@ -29,10 +29,9 @@ int main(void) {
 
         int res, count;
 
-        if (index % 2) {
+        if (index % 2 == 0) {
             res = sums[1];
             count = counts[1];
-
         } else {
             res = sums[0];
             count = counts[0];
