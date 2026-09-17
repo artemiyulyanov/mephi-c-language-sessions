@@ -1,4 +1,4 @@
 #!/bin/bash
 
-gcc $0 -o executable
+gcc $1 -o executable
 ./executable
